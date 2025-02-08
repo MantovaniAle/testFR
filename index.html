@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treino de Números em Francês</title>
+    <title>Exercice des nombres en français</title>
     <script>
         let numbers = [];
         
@@ -21,21 +21,21 @@
             const result = document.getElementById("result");
             
             if (userInput === correctAnswer) {
-                result.innerText = "Correcto!";
+                result.innerText = "Correto!";
                 result.style.color = "green";
             } else {
-                result.innerText = "Incorrecto! A resposta correta era: " + correctAnswer;
+                result.innerText = "Incorreto! A resposta correta era: " + correctAnswer;
                 result.style.color = "red";
             }
         }
     </script>
 </head>
 <body>
-    <h2>Treino de Números em Francês</h2>
-    <button onclick="generateNumbers()">Ouvir Números</button>
+    <h2 class="ExTitle">Exercice des nombres en français</h2>
+    <button onclick="generateNumbers()">Écouter les nombres:</button>
     <br><br>
-    <input type="text" id="userInput" placeholder="Digite os números aqui">
-    <button onclick="checkAnswer()">Verificar</button>
+    <input type="text" id="userInput" placeholder="entrez les chiffres ici" class="text">
+    <button onclick="checkAnswer()">Vérifier</button>
     <p id="result"></p>
 </body>
 </html>
