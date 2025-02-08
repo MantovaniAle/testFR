@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino de Números em Francês</title>
+    <script>
+        let numbers = [];
+        
+        function generateNumbers() {
+            numbers = Array.from({ length: 3 }, () => Math.floor(Math.random() * 100));
+            const text = numbers.join(', ');
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'fr-FR';
+            window.speechSynthesis.speak(speech);
+        }
+        
+        function checkAnswer() {
+            const userInput = document.getElementById("userInput").value;
+            const correctAnswer = numbers.join(', ');
+            const result = document.getElementById("result");
+            
+            if (userInput === correctAnswer) {
+                result.innerText = "Correcto!";
+                result.style.color = "green";
+            } else {
+                result.innerText = "Incorrecto! A resposta correta era: " + correctAnswer;
+                result.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Treino de Números em Francês</h2>
+    <button onclick="generateNumbers()">Ouvir Números</button>
+    <br><br>
+    <input type="text" id="userInput" placeholder="Digite os números aqui">
+    <button onclick="checkAnswer()">Verificar</button>
+    <p id="result"></p>
+</body>
+</html>
